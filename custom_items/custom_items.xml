@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record model="ir.ui.view" id="items_product">
+        <field name="name">product.normal.form</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="/form/sheet/div[@class='oe_title']/h1[1]" position="after">
+                <div class="oe_edit_only">
+                	<label for="item_specification" string="Specifications / Size"/>
+                </div>
+                <h1>
+                	<field name="item_specification" />
+                </h1>
+            </xpath>
+            <field name="description" position="attributes">
+				<attribute name="invisible">True</attribute>
+			</field>
+            <field name="item_specification" position="after">
+                <field name="description" string="Item Description" placeholder="describe the product characteristics..."/>
+            </field>
+            <field name="sale_ok" position="attributes">
+				<attribute name="invisible">True</attribute>
+			</field>
+			<label for="sale_ok" position="attributes">
+				<attribute name="invisible">True</attribute>
+			</label>
+        </field>
+    </record>
+    <menuitem action="product.product_category_action" id="purchase.menu_product_by_category_purchase_form" parent="purchase.menu_procurement_management_product" name="Items By Category" sequence="10"/>
+    <menuitem action="product.product_normal_action_puchased" id="purchase.menu_procurement_partner_contact_form" parent="purchase.menu_procurement_management_product" name="Items" sequence="11"/>
+  </data>
+</openerp>
