@@ -19,6 +19,8 @@
 			</field>
             <field name="item_specification" position="after">
                 <field name="description" string="Item Description" placeholder="describe the product characteristics..."/>
+		<field name="item_group" string="Group" placeholder="Group"/>
+		<field name="item_subgroup" string="Sub Group" placeholder="Sub Group"/>
             </field>
             <field name="sale_ok" position="attributes">
 				<attribute name="invisible">True</attribute>
@@ -26,7 +28,7 @@
 			<label for="sale_ok" position="attributes">
 				<attribute name="invisible">True</attribute>
 			</label>
-        </field>
+            </field>
     </record>
     <menuitem action="product.product_category_action" id="purchase.menu_product_by_category_purchase_form" parent="purchase.menu_procurement_management_product" name="Items By Category" sequence="10"/>
     <menuitem action="product.product_normal_action_puchased" id="purchase.menu_procurement_partner_contact_form" parent="purchase.menu_procurement_management_product" name="Items" sequence="11"/>
